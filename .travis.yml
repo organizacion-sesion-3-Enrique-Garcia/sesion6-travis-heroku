@@ -1,0 +1,15 @@
+language: php
+php:
+  - 7.2
+services:
+  - mysql
+before_script:
+  - composer install
+script: ./vendor/bin/phpunit ./tests
+deploy:
+  provider: heroku
+  app: multimedia-database
+  on: master
+  skip_cleanup: true
+  api_key:
+    secure: uDAR1CUbLrhOUbECjuDcWKHE5WXtZFaQ1MwcFYiwtERG89NZpEn+0bAtxOCiN1cHTMTpQzJTka36Mg2CBA4gR0PJwuH8J1VMiii8NiU4nTTUfNJ4s4pd+KpPAbxeL6V12JR0vYKrXyjd29bMArOGVMfMRM5RSiX7hPjaG13wV/m3TWc6XxEdLezF8Zw74Q46XtQA2L6hHEEXgpguGSALoRl0/yPhfdvg7Sbks12XmuJcwKUHqbLR3bM3cHYYuYntQrI6A7mFhy0/FsnSW0ZHyayc6qE0CoIf1ghY3soBYUr9TJ1Y2yiUxVn6bI5i2ah9F/w7/E/NcVZosGRcyzfq7bZ2Qy7L5rzMt7+F6jOXIYPsDdF2FxdNn8fMHI64k4MJE/80GLGxsQGppYxthfotSGInpOc9KT1+yNgrLBA/6YyzBT7+S+qbmUeM5ng+aPTrhofKTWFlUE1qXY03+20siSj5LGxOY6PikMYx8UQo1IVGNvhzAvBDuG2vKY2z0eUCkOiza7o1vaJqCr5XHwoeo6Flz7pKG8e7mc+D/9RJ7yKcU5V8r5J2VCHAmv2e4e1INNcZ81OTE7oMoF5N53e39x048lJHXivd414i/cMx1dJyspWa2kcLrLYPwcgFbZ17+ryjk56tNZAx5jyV8m8alboxqzmURYZrBfkQlFIZED4=
